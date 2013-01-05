@@ -88,14 +88,14 @@ $(document).ready(function() { //when the document is ready
         $(this).click(function () {
 			 // optionally add the class .toggleDiv to each div you want to automatically close
              //$('.toggleDiv').fadeOut(options.speed, options.easing);
-             $('.toggleDiv').animate({ height: '100%', opacity: .5 }, 'slow');
+             $('.toggleDiv').animate({ height: 0, opacity: 0 }, 'slow');
 			 // this var stores which button you've clicked
              var toggleClick = $(this);
 		     // this reads the rel attribute of the button to determine which div id to toggle
 		     var toggleDiv = $(this).attr('rel');
 		     // here we toggle show/hide the correct div at the right speed and using which easing effect
 		     //$(toggleDiv).fadeToggle(options.speed, options.easing, function() {
-		     $(toggleDiv).animate({ height: '100%', width: '10px', opacity: .5 }, 'slow', function() {
+		     $(toggleDiv).animate({ height: 'toggle', opacity: 'toggle' }, 'slow', function() {
 		     // this only fires once the animation is completed
 			 if(options.changeText==1){
 		     $(toggleDiv).is(":visible") ? toggleClick.text(options.hideText) : toggleClick.text(options.showText);
