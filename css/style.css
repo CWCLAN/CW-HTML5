@@ -1,0 +1,43 @@
+#main {
+	min-height: 100%; /* Mindesthöhe für moderne Browser */
+	height: auto !important; /* Important Regel für moderne Browser */
+	height: 100%; /* Mindesthöhe für den IE */
+	overflow: hidden !important; /* FF Scroll-leiste */
+	width: 70%;
+	min-width: 1000px;
+	margin: auto;
+	margin-top: 0;
+	background: rgb(200, 54, 54);
+	background: rgba(200, 54, 54, 0.2);
+}
+#header {
+	height: 200px;
+	background: rgb(44, 41, 38);
+	background: rgba(44, 41, 38, 0.22);
+}
+
+#side_left {
+	background-color: #0c0;
+	width: 200px;
+	float: left;
+ 
+}
+#side_right {
+	background-color: #f60;
+	float: right;
+	width: 200px;
+}
+ 
+#content {
+	background-color: #00f;
+	height:100%;
+	overflow:hidden;
+}
+
+
+#footer {
+	height: 300px;
+	clear:both;
+	background: rgb(44, 41, 38);
+	background: rgba(44, 41, 38, 0.22);
+}
