@@ -3,7 +3,7 @@
 	height: auto !important; /* Important Regel für moderne Browser */
 	height: 100%; /* Mindesthöhe für den IE */
 	overflow: hidden !important; /* FF Scroll-leiste */
-	width: 80%;
+	width: 70%;
 	min-width: 1000px;
 	margin: auto;
 	margin-top: 0;
@@ -35,8 +35,9 @@
 }
  
 #content {
-	background-color: #00f;
-	height:100%;
+	background: rgb(99, 95, 97);
+	background: rgba(99, 95, 97, 0.4);	
+	height:3000px;
 	overflow:hidden;
 }
 
