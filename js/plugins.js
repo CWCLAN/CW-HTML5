@@ -1,124 +1,115 @@
 // Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
+( function() {
+		var method;
+		var noop = function() {
+		};
+		var methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error', 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log', 'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd', 'timeStamp', 'trace', 'warn'];
+		var length = methods.length;
+		var console = (window.console = window.console || {});
 
-    while (length--) {
-        method = methods[length];
+		while (length--) {
+			method = methods[length];
 
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }}
-}());
-
-// Place any jQuery/helper plugins in here.
-
-//Author URL: http://www.ianlunn.co.uk/
-//License: http://creativecommons.org/licenses/by-sa/3.0/ (Attribution Share Alike). Please attribute work to Ian Lunn simply by leaving these comments in the source code or if you'd prefer, place a link on your website to http://www.ianlunn.co.uk/.
-
-//Dual licensed under the MIT and GPL licenses:
-//http://www.opensource.org/licenses/mit-license.php
-//http://www.gnu.org/licenses/gpl.html
-// vertical Scrolling modified by globeFreak www.cwclan.de
-
-$(document).ready(function() { //when the document is ready
-				
-		windowHeight = $(window).height(); //get the height of the window
-		city = windowHeight * 0.675; //create a variable that contains the starting position for bg-city.png
-		hillsW = windowHeight * 0.010; //do the same for bg-hills.png
-		hillsH = windowHeight * 0.350; //do the same for bg-hills.png
-		cloudsW = windowHeight * 0.350; //do the same for bg-mountains.png
-		cloudsH = windowHeight * 0.010;		
-		sky = 0; //sky starts at the top (0px)
-		
-		//change the css of the <html> element to give it multiple backgrounds using CSS3. This contains the variables we just worked out for each individual background
-		$('html').css({"background" : "url(img/bg-city.png) " + city + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + sky + "px " + sky + "px repeat-x #747a94 fixed"});
-		
-		
-		function Move(){ //set up a function to be called whenever the window is scrolled or resized
-			windowHeight = $(window).height(); //get the height of the window
-			pos = $(window).scrollTop(); //get the position of the scrollbar
-			city = windowHeight * 0.675 + pos * 1.1; //create a variable that contains the starting position for bg-city.png
-			cityfix = windowHeight * 0.675; 
-			hillsW = windowHeight * 0.010 + pos * 0.7; //do the same for bg-hills.png
-			hillsH = windowHeight * 0.350; 
-			cloudsW = windowHeight * 0.350 + pos * 0.51; //do the same for bg-mountains.png
-			cloudsH = windowHeight * 0.010; 
-			skyW = 0 + pos * 0.35; //do the same for bg-mountains.png
-			sky = 0; //keep the sky at the top (0px), it moves naturally with the scroll anyway
-				
-			//change the css of the <html> element to give it multiple backgrounds using CSS3. The variables contained will change for every pixel the window is resized or scrolled
-			$('html').css({"background" : "url(img/bg-city.png) " + city + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + skyW + "px " + sky + "px repeat-x #747a94 fixed"});
+			// Only stub undefined methods.
+			if (!console[method]) {
+				console[method] = noop;
+			}
 		}
-		
-	$(window).resize(function(){ //when the window is resized...
-		Move(); //call the Move() function
-	});		
-	
-	$(window).bind('scroll', function(){ //when the user is scrolling...
-		Move(); //call the Move() function
-	});
-	
-});
+	}());
 
-// jQuery div toggle
-(function ($) {
-    $.fn.showHide = function (options) {
+/**
+ * Cookie plugin
+ *
+ * Copyright (c) 2006 Klaus Hartl (stilbuero.de)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ */
 
-	//default vars for the plugin
-        var defaults = {
-            speed: 800,
-			easing: '',
-			changeText: 0,
-			showText: 'Show',
-			hideText: 'Hide'
+/**
+ * Create a cookie with the given name and value and other optional parameters.
+ *
+ * @example $.cookie('the_cookie', 'the_value');
+ * @desc Set the value of a cookie.
+ * @example $.cookie('the_cookie', 'the_value', { expires: 7, path: '/', domain: 'jquery.com', secure: true });
+ * @desc Create a cookie with all available options.
+ * @example $.cookie('the_cookie', 'the_value');
+ * @desc Create a session cookie.
+ * @example $.cookie('the_cookie', null);
+ * @desc Delete a cookie by passing null as value. Keep in mind that you have to use the same path and domain
+ *       used when the cookie was set.
+ *
+ * @param String name The name of the cookie.
+ * @param String value The value of the cookie.
+ * @param Object options An object literal containing key/value pairs to provide optional cookie attributes.
+ * @option Number|Date expires Either an integer specifying the expiration date from now on in days or a Date object.
+ *                             If a negative value is specified (e.g. a date in the past), the cookie will be deleted.
+ *                             If set to null or omitted, the cookie will be a session cookie and will not be retained
+ *                             when the the browser exits.
+ * @option String path The value of the path atribute of the cookie (default: path of page that created the cookie).
+ * @option String domain The value of the domain attribute of the cookie (default: domain of page that created the cookie).
+ * @option Boolean secure If true, the secure attribute of the cookie will be set and the cookie transmission will
+ *                        require a secure protocol (like HTTPS).
+ * @type undefined
+ *
+ * @name $.cookie
+ * @cat Plugins/Cookie
+ * @author Klaus Hartl/klaus.hartl@stilbuero.de
+ */
 
-        };
-        var options = $.extend(defaults, options);
-
-        $(this).click(function () {
-			 // optionally add the class .toggleDiv to each div you want to automatically close
-             	//$('.toggleDiv').fadeOut(options.speed, options.easing);
-             $('.toggleDiv').animate({ width: '10', opacity: .5 }, 'slow');             
-			 // this var stores which button you've clicked
-             var toggleClick = $(this);
-		     // this reads the rel attribute of the button to determine which div id to toggle
-		     var toggleDiv = $(this).attr('title');
-		     // here we toggle show/hide the correct div at the right speed and using which easing effect
-		   		//$(toggleDiv).fadeToggle(options.speed, options.easing, function() {
-		     $(toggleDiv).animate({ height: 'toggle', opacity: 'toggle' }, 'slow', function() {
-		     // this only fires once the animation is completed
-			 if(options.changeText==1){
-		     $(toggleDiv).is(":visible") ? toggleClick.text(options.hideText) : toggleClick.text(options.showText);
-			 }
-              });
-
-		  return false;
-
-        });
-
-    };
-})(jQuery);
-
-$(document).ready(function(){
-
-   $('.show_hide').showHide({
-		speed: 800,  // speed you want the toggle to happen
-		easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
-		changeText: 1, // if you dont want the button text to change, set this to 0
-		showText: 'View',// the button text to show when a div is closed
-		hideText: 'Close' // the button text to show when a div is open
-
-	});
-
-});
-// jQuery div toggle ---END---
+/**
+ * Get the value of a cookie with the given name.
+ *
+ * @example $.cookie('the_cookie');
+ * @desc Get the value of a cookie.
+ *
+ * @param String name The name of the cookie.
+ * @return The value of the cookie.
+ * @type String
+ *
+ * @name $.cookie
+ * @cat Plugins/Cookie
+ * @author Klaus Hartl/klaus.hartl@stilbuero.de
+ */
+jQuery.cookie = function(name, value, options) {
+    if (typeof value != 'undefined') { // name and value given, set cookie
+        options = options || {};
+        if (value === null) {
+            value = '';
+            options.expires = -1;
+        }
+        var expires = '';
+        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+            var date;
+            if (typeof options.expires == 'number') {
+                date = new Date();
+                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+            } else {
+                date = options.expires;
+            }
+            expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE
+        }
+        // CAUTION: Needed to parenthesize options.path and options.domain
+        // in the following expressions, otherwise they evaluate to undefined
+        // in the packed version for some reason...
+        var path = options.path ? '; path=' + (options.path) : '';
+        var domain = options.domain ? '; domain=' + (options.domain) : '';
+        var secure = options.secure ? '; secure' : '';
+        document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+    } else { // only name given, get cookie
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+};
