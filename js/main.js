@@ -115,13 +115,19 @@ $(document).ready(function() {//when the document is ready
 $(document).ready(function() {
 
 	if (!$.cookie("CW_LeftToggleStatus")) {
-		$.cookie("CW_LeftToggleStatus", 1, {expires: 14});
+		$.cookie("CW_LeftToggleStatus", 1, {
+			expires : 14
+		});
 	};
+	
+	
 	var panel = $("#side_left"), flip = $(".flip_left"), state = $.cookie("CW_LeftToggleStatus");
 
 	flip.click(function() {
 		panel.slideToggle("slow", function() {
-			$.cookie("CW_LeftToggleStatus", (state == 1 ? "0" : "1"), {expires: 14});
+			$.cookie("CW_LeftToggleStatus", (state == 1 ? "0" : "1"), {
+				expires : 14
+			});
 		});
 	});
 
@@ -129,14 +135,19 @@ $(document).ready(function() {
 		panel.hide();
 	}
 
+	// Rechtes Panel
 	if (!$.cookie("CW_RightToggleStatus")) {
-		$.cookie("CW_RightToggleStatus", 1, {expires: 14});
-	};
+		$.cookie("CW_RightToggleStatus", 1, {
+			expires : 14
+		});
+	};	
 	var panelr = $("#side_right"), flipr = $(".flip_right"), stater = $.cookie("CW_RightToggleStatus");
 
 	flipr.click(function() {
 		panelr.slideToggle("slow", function() {
-			$.cookie("CW_RightToggleStatus", (stater == 1 ? "0" : "1"), {expires: 14});
+			$.cookie("CW_RightToggleStatus", (stater == 1 ? "0" : "1"), {
+				expires : 14
+			});
 		});
 	});
 
