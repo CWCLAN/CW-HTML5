@@ -10,47 +10,62 @@
 
 $(document).ready(function() {//when the document is ready
 
+	if (!$.cookie("CW_MoveBackground")) {
+		$.cookie("CW_MoveBackground", 1, {
+			expires : 50
+		});
+	};
+
+	var move = $(".moveBGR"), state = $.cookie("CW_MoveBackground");
+
+	move.click(function() {
+		$.cookie("CW_MoveBackground", (state == 1 ? "0" : "1"), {
+			expires : 50
+		});
+		window.location.reload();
+	});
+
 	windowHeight = $(window).height();
+	//scrollHeight = $(window).scrollHeight;
 	//get the height of the window
-	city = windowHeight * 0.675;
+	cityW = windowHeight * 0.675;
 	//create a variable that contains the starting position for bg-city.png
 	hillsW = windowHeight * 0.010;
 	//do the same for bg-hills.png
-	hillsH = windowHeight * 0.450;
+	hillsH = windowHeight * 0.250;
 	//do the same for bg-hills.png
 	cloudsW = windowHeight * 0.350;
-	//do the same for bg-mountains.png
+	//do the same for bg-clouds.png
 	cloudsH = windowHeight * 0.010;
 	sky = 0;
 	//sky starts at the top (0px)
-
 	//change the css of the <html> element to give it multiple backgrounds using CSS3. This contains the variables we just worked out for each individual background
 	$('html').css({
-		"background" : "url(img/bg-city.png) " + city + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + sky + "px " + sky + "px repeat-x #747a94 fixed"
+		"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + sky + "px " + sky + "px repeat-x #747a94 fixed"
 	});
 
 	function Move() {//set up a function to be called whenever the window is scrolled or resized
 		windowHeight = $(window).height();
+		//scrollHeight = $(window).scrollHeight;
 		//get the height of the window
-		pos = $(window).scrollTop();
+		pos = $(window).scrollTop();				
 		//get the position of the scrollbar
-		city = windowHeight * 0.675 + pos * 1.1;
+		cityW = windowHeight * 0.675 + pos * 0.5;
 		//create a variable that contains the starting position for bg-city.png
-		cityfix = windowHeight * 0.675;
-		hillsW = windowHeight * 0.010 + pos * 0.7;
+		//cityH = windowHeight - 414) - pos * 0.2;
+		hillsW = windowHeight * 0.010 + pos * 0.4;
 		//do the same for bg-hills.png
-		hillsH = windowHeight * 0.450;
-		cloudsW = windowHeight * 0.350 + pos * 0.51;
-		//do the same for bg-mountains.png
+		hillsH = windowHeight * 0.250;
+		cloudsW = windowHeight * 0.350 + pos * 0.3;
+		//do the same for bg-clouds.png
 		cloudsH = windowHeight * 0.010;
-		skyW = 0 + pos * 0.35;
-		//do the same for bg-mountains.png
+		skyW = 0 + pos * 0.2;
+		//do the same for bg-sky.png
 		sky = 0;
 		//keep the sky at the top (0px), it moves naturally with the scroll anyway
-
 		//change the css of the <html> element to give it multiple backgrounds using CSS3. The variables contained will change for every pixel the window is resized or scrolled
 		$('html').css({
-			"background" : "url(img/bg-city.png) " + city + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + skyW + "px " + sky + "px repeat-x #747a94 fixed"
+			"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + skyW + "px " + sky + "px repeat-x #747a94 fixed"
 		});
 	}
 
@@ -61,7 +76,9 @@ $(document).ready(function() {//when the document is ready
 	});
 
 	$(window).bind('scroll', function() {//when the user is scrolling...
-		Move();
+		if ($.cookie("CW_MoveBackground") == 1) {
+			Move();
+		};
 		//call the Move() function
 	});
 
@@ -119,8 +136,7 @@ $(document).ready(function() {
 			expires : 14
 		});
 	};
-	
-	
+
 	var panel = $("#side_left"), flip = $(".flip_left"), state = $.cookie("CW_LeftToggleStatus");
 
 	flip.click(function() {
@@ -140,7 +156,7 @@ $(document).ready(function() {
 		$.cookie("CW_RightToggleStatus", 1, {
 			expires : 14
 		});
-	};	
+	};
 	var panelr = $("#side_right"), flipr = $(".flip_right"), stater = $.cookie("CW_RightToggleStatus");
 
 	flipr.click(function() {
