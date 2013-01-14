@@ -50,16 +50,16 @@ $(document).ready(function() {//when the document is ready
 		//get the height of the window
 		pos = $(window).scrollTop();				
 		//get the position of the scrollbar
-		cityW = windowHeight * 0.675 + pos * 0.5;
+		cityW = windowHeight * 0.675 + pos * 0.05;
 		//create a variable that contains the starting position for bg-city.png
 		//cityH = windowHeight - 414) - pos * 0.2;
-		hillsW = windowHeight * 0.010 + pos * 0.4;
+		hillsW = windowHeight * 0.010 + pos * 0.04;
 		//do the same for bg-hills.png
 		hillsH = windowHeight * 0.250;
-		cloudsW = windowHeight * 0.350 + pos * 0.3;
+		cloudsW = windowHeight * 0.350 + pos * 0.03;
 		//do the same for bg-clouds.png
 		cloudsH = windowHeight * 0.010;
-		skyW = 0 + pos * 0.2;
+		skyW = 0 + pos * 0.02;
 		//do the same for bg-sky.png
 		sky = 0;
 		//keep the sky at the top (0px), it moves naturally with the scroll anyway
