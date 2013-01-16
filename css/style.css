@@ -12,6 +12,18 @@ body {
 	color: #F1E8D7;
 }
 
+a {
+	/*color: #ca880c;*/
+	color: #a5710e;
+	text-decoration: none;
+	text-shadow: 0 1px 1px black;
+}
+a:hover {
+	/*color: #97660a;*/
+	color: #7c5305;
+	text-shadow: 0 1px 1px #494949;
+}
+
 #wrapper {
 	min-height: 100%; /* Mindesthöhe für moderne Browser */
 	height: auto !important; /* Important Regel für moderne Browser */
@@ -56,6 +68,7 @@ nav {
 	margin-bottom: 5px;
 	-webkit-box-shadow: 2px 2px 5px rgba(43, 39, 36, 0.8);
 	box-shadow: 2px 2px 5px rgba(43, 39, 36, 0.8);
+	text-shadow: 0 1px 1px black;
 }
 /* Content */
 
@@ -101,7 +114,7 @@ nav {
 
 .panel .maincap {
 	background: url(../img/panelback.png) repeat;
-	border-bottom: 2px solid #39332F;	
+	border-bottom: 2px solid #39332F;
 	margin: -5px -5px 5px -5px;
 	padding: 5px;
 	font-size: 1em;
@@ -113,6 +126,43 @@ nav {
 .panel .contentbody {
 	margin-top: 5px;
 	color: #292526;
+}
+
+.pagenav {
+	padding-bottom: 0.6em;
+	font-weight: bold;
+}
+.pagenav span {
+	border: 1px solid #2B2724;
+	background-color: rgba(109, 102, 94, 0.8);
+	background-color: rgb(109, 102, 94);
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 0.2em 0.4em 0.2em 0.4em;
+	margin: 0.2em;
+	-webkit-box-shadow:inset 2px 2px 7px rgba(43, 39, 36, 0.8);
+	box-shadow:inset 2px 2px 7px rgba(43, 39, 36, 0.8);
+}
+.pagenav a {
+	background: url(../img/panelback.png) repeat;
+	background-color: rgba(135,125,113,0.85);
+	background-color: rgb(135,125,113);
+	border: 1px solid #2B2724;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 0.2em 0.4em 0.2em 0.4em;
+	margin: 0.2em;
+	text-decoration: none;
+	-webkit-box-shadow: 2px 2px 7px rgba(43, 39, 36, 0.8);
+	box-shadow: 2px 2px 7px rgba(43, 39, 36, 0.8);
+}
+.pagenav a:hover {
+	color: #F1E8D7;
+	background-color: rgba(50,46,42,0.85);
+	background-color: rgb(50,46,42,);
+	border: 1px solid #49433e;
 }
 
 /* Side left/right */
@@ -190,6 +240,7 @@ footer h3 {
 	position: relative;
 	color: #323640;
 	top: 170px;
+	text-shadow: 0 -1px 1px #232935, 0 1px 1px #464e5c;
 }
 
 footer a {
