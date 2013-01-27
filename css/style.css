@@ -136,8 +136,8 @@ nav {
 	border: 1px solid #2B2724;
 	background-color: rgba(109, 102, 94, 0.8);
 	background-color: rgb(109, 102, 94);
-	-moz-border-radius: 5px;
-	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;	
 	-webkit-border-radius: 5px;
 	padding: 0.2em 0.4em 0.2em 0.4em;
 	margin: 0.2em;
@@ -149,8 +149,8 @@ nav {
 	background-color: rgba(135,125,113,0.85);
 	background-color: rgb(135,125,113);
 	border: 1px solid #2B2724;
+	border-radius: 5px;
 	-moz-border-radius: 5px;
-	-khtml-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	padding: 0.2em 0.4em 0.2em 0.4em;
 	margin: 0.2em;
