@@ -25,14 +25,14 @@ $(document).ready(function() {//when the document is ready
 		window.location.reload();
 	});
 
-	windowHeight = $(window).height();
+	windowHeight = $('#main_wrapper').height();
 	//scrollHeight = $(window).scrollHeight;
 	//get the height of the window
 	cityW = windowHeight * 0.675;
 	//create a variable that contains the starting position for bg-city.png
 	hillsW = windowHeight * 0.010;
 	//do the same for bg-hills.png
-	hillsH = windowHeight * 0.250;
+	hillsH = windowHeight * 0.400;
 	//do the same for bg-hills.png
 	cloudsW = windowHeight * 0.350;
 	//do the same for bg-clouds.png
@@ -40,23 +40,23 @@ $(document).ready(function() {//when the document is ready
 	sky = 0;
 	//sky starts at the top (0px)
 	//change the css of the <html> element to give it multiple backgrounds using CSS3. This contains the variables we just worked out for each individual background
-	$('html').css({
-		"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + sky + "px " + sky + "px repeat-x #747a94 fixed"
+	$('#main_wrapper').css({
+		"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x , url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x , url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x , url(img/bg-sky.jpg) " + sky + "px " + sky + "px repeat-x #747a94"
 	});
 
 	function Move() {//set up a function to be called whenever the window is scrolled or resized
-		windowHeight = $(window).height();
+		windowHeight = $('#main_wrapper').height();
 		//scrollHeight = $(window).scrollHeight;
 		//get the height of the window
 		pos = $(window).scrollTop();				
 		//get the position of the scrollbar
-		cityW = windowHeight * 0.675 + pos * 0.05;
+		cityW = windowHeight * 0.675 + pos * 0.01;
 		//create a variable that contains the starting position for bg-city.png
 		//cityH = windowHeight - 414) - pos * 0.2;
-		hillsW = windowHeight * 0.010 + pos * 0.04;
+		hillsW = windowHeight * 0.010 + pos * 0.03;
 		//do the same for bg-hills.png
-		hillsH = windowHeight * 0.250;
-		cloudsW = windowHeight * 0.350 + pos * 0.03;
+		hillsH = windowHeight * 0.400;
+		cloudsW = windowHeight * 0.350 + pos * 0.05;
 		//do the same for bg-clouds.png
 		cloudsH = windowHeight * 0.010;
 		skyW = 0 + pos * 0.02;
@@ -64,8 +64,8 @@ $(document).ready(function() {//when the document is ready
 		sky = 0;
 		//keep the sky at the top (0px), it moves naturally with the scroll anyway
 		//change the css of the <html> element to give it multiple backgrounds using CSS3. The variables contained will change for every pixel the window is resized or scrolled
-		$('html').css({
-			"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + skyW + "px " + sky + "px repeat-x #747a94 fixed"
+		$('#main_wrapper').css({
+			"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x , url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x , url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x, url(img/bg-sky.jpg) " + skyW + "px " + sky + "px repeat-x #747a94"
 		});
 	}
 
