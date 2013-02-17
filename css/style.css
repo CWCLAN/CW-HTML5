@@ -58,7 +58,7 @@ header hgroup {
 	text-align:right;
 }
 
-header #cwlogo {
+header .cwlogo {
 	position: absolute;
 	margin-left: 10px;	
 }
