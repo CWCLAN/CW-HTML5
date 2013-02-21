@@ -41,7 +41,7 @@ $(document).ready(function() {//when the document is ready
 	//sky starts at the top (0px)
 	//change the css of the <html> element to give it multiple backgrounds using CSS3. This contains the variables we just worked out for each individual background
 	$('#main_wrapper').css({
-		"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x , url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x , url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x , url(img/bg-sky.jpg) " + sky + "px " + sky + "px repeat-x #747a94"
+		"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + sky + "px " + sky + "px repeat-x fixed #747a94"
 	});
 
 	function Move() {//set up a function to be called whenever the window is scrolled or resized
@@ -65,7 +65,7 @@ $(document).ready(function() {//when the document is ready
 		//keep the sky at the top (0px), it moves naturally with the scroll anyway
 		//change the css of the <html> element to give it multiple backgrounds using CSS3. The variables contained will change for every pixel the window is resized or scrolled
 		$('#main_wrapper').css({
-			"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x , url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x , url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x, url(img/bg-sky.jpg) " + skyW + "px " + sky + "px repeat-x #747a94"
+			"background" : "url(img/bg-city.png) " + cityW + "px bottom repeat-x fixed, url(img/bg-hills.png) " + hillsW + "px " + hillsH + "px repeat-x fixed, url(img/bg-clouds.png) " + cloudsW + "px " + cloudsH + "px repeat-x fixed, url(img/bg-sky.jpg) " + skyW + "px " + sky + "px repeat-x fixed #747a94"
 		});
 	}
 
