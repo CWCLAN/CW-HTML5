@@ -25,14 +25,14 @@ $(document).ready(function() {//when the document is ready
 		window.location.reload();
 	});
 
-	windowHeight = $('#main_wrapper').height();
+	windowHeight = $(document).height();
 	//scrollHeight = $(window).scrollHeight;
 	//get the height of the window
-	cityW = windowHeight * 0.675;
+	cityW = windowHeight * 0.675;	
 	//create a variable that contains the starting position for bg-city.png
 	hillsW = windowHeight * 0.010;
 	//do the same for bg-hills.png
-	hillsH = windowHeight * 0.400;
+	hillsH = windowHeight * 0.200;
 	//do the same for bg-hills.png
 	cloudsW = windowHeight * 0.350;
 	//do the same for bg-clouds.png
@@ -45,17 +45,17 @@ $(document).ready(function() {//when the document is ready
 	});
 
 	function Move() {//set up a function to be called whenever the window is scrolled or resized
-		windowHeight = $('#main_wrapper').height();
+		windowHeight = $(document).height();
 		//scrollHeight = $(window).scrollHeight;
 		//get the height of the window
 		pos = $(window).scrollTop();				
 		//get the position of the scrollbar
-		cityW = windowHeight * 0.675 + pos * 0.01;
+		cityW = windowHeight * 0.675 + pos * 0.01;		
 		//create a variable that contains the starting position for bg-city.png
 		//cityH = windowHeight - 414) - pos * 0.2;
 		hillsW = windowHeight * 0.010 + pos * 0.03;
 		//do the same for bg-hills.png
-		hillsH = windowHeight * 0.400;
+		hillsH = windowHeight * 0.200;
 		cloudsW = windowHeight * 0.350 + pos * 0.05;
 		//do the same for bg-clouds.png
 		cloudsH = windowHeight * 0.010;
