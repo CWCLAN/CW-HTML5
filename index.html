@@ -8,6 +8,16 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- Chrome Frame Plugin for IE users
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+		<script>
+		window.onload = function() {
+		CFInstall.check({
+		mode : "overlay"
+		});
+		};
+		</script>
+		-->
 		<title>HTML5 Test</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
@@ -27,16 +37,17 @@
 		<!-- Add your site or application content here -->
 		<div id="main_wrapper" class="clearfix">
 			<header>
-				<hgroup>
-					<div class="cwlogo"><img src="img/cwlogo.png" />
-					</div>
-					<h1>CWCLAN HTML5 Theme</h1>
-					<h2><a class="flip_left" href="#">linke Seite ein/aus</a>
-					<br />
-					<a class="flip_right" href="#">rechte Seite ein/aus</a>
-					<br />
-					<a class="moveBGR" href="#">Hintergrund Scrollen an/aus</a></h2>
-				</hgroup>
+				<div>
+					<img src="img/cwlogo.png" alt="Logo"/>
+					<hgroup>
+						<h1>CWCLAN HTML5 Theme</h1>
+						<h2><a class="flip_left" href="#">linke Seite ein/aus</a>
+						<br />
+						<a class="flip_right" href="#">rechte Seite ein/aus</a>
+						<br />
+						<a class="moveBGR" href="#">Hintergrund Scrollen an/aus</a></h2>
+					</hgroup>
+				</div>
 			</header>
 			<nav>
 				<span>Navi</span>
@@ -99,7 +110,7 @@
 								Content
 							</div>
 							<div class="contentbody">
-								<div class="cwlogo" style="float:left;"><img src="img/cwlogo_2.png" />
+								<div class="cwlogo" style="float:left;"><img src="img/cwlogo_2.png" alt="Logo"/>
 								</div>
 								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
 								sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
@@ -132,7 +143,7 @@
 								Content
 							</div>
 							<div class="contentbody">
-								<div class="cwlogo" style="float:left;"><img src="img/cwlogo_2.png" />
+								<div class="cwlogo" style="float:left;"><img src="img/cwlogo_2.png" alt="Logo"/>
 								</div>
 								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
 								sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
@@ -159,8 +170,8 @@
 								est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 								dolore magna aliquyam erat.
 							</div>
-						</div>					
-						<div align="center" style=";margin-top:5px;">
+						</div>
+						<div style="margin-top:5px;text-align:center;">
 							<div class="pagenav">
 								Seite  1 von 75: <span><strong>1</strong></span><a href="#">2</a><a href="#">3</a><a href="#">4</a>...<a href="#">75</a>
 							</div>
@@ -223,8 +234,8 @@
 							<a href="#" title="">Blubb Bla Blääää</a>
 						</li>
 					</ul>
-				</div>				
-			</div>			
+				</div>
+			</div>
 		</footer>
 
 		<script src="js/vendor/jquery-1.8.3.min.js"></script>
