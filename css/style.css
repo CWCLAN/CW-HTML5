@@ -12,15 +12,22 @@ body {
 	height: auto !important; /* Important Regel für moderne Browser */
 	height: 100%; /* Mindesthöhe für den IE */	
 }
-a {
-	/*color: #ca880c;*/
+a {	
+	color: #e7ab38;
+	text-decoration: none;
+	text-shadow: 0 0.1em 0.1em black;
+}
+a:hover {	
+	color: #f0d8aa;
+	text-shadow: 0 0.1em 0.1em black;
+}
+a.dark {	
 	color: #a5710e;
 	text-decoration: none;
 	text-shadow: 0 1px 1px black;
 }
-a:hover {
-	/*color: #97660a;*/
-	color: #7c5305;
+a:hover.dark {	
+	color: #e7ab38;
 	text-shadow: 0 1px 1px #494949;
 }
 h1, h2, h3 ,h4, h5 {
@@ -52,9 +59,10 @@ header div hgroup {
 header div img {
 	position:absolute;
 	padding-left: 20px;
+	top: 0px;
 }
 nav {
-	
+	position:relative;
 	width: 75%;
 	min-width: 1000px;
 	margin-top: -25px !important;
