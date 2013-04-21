@@ -21,10 +21,10 @@ $(document).ready(function() {//when the document is ready
 	move.click(function() {
 		$.cookie("CW_MoveBackground", (state == 1 ? "0" : "1"), {
 			expires : 50
-		});
+		});		
 		window.location.reload();
-	});
-
+	});	
+	
 	windowHeight = $(document).height();
 	//scrollHeight = $(window).scrollHeight;
 	//get the height of the window
@@ -78,8 +78,8 @@ $(document).ready(function() {//when the document is ready
 	$(window).bind('scroll', function() {//when the user is scrolling...
 		if ($.cookie("CW_MoveBackground") == 1) {
 			Move();
-		};
-		//call the Move() function
+			//call the Move() function
+		};		
 	});
 
 });
